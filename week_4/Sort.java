@@ -31,12 +31,13 @@ public class Sort {
 		Comparator comp = new Comparator();
 		          
 		//Change your code here
-		sort(array, comp);
-		int[] array2 = new int[array.length];
-                for(int i = array.length - 1; i >= 0; i--){
-                    array2[array2.length - i - 1] = array[i];
-                }
-                array = array2;
+		sort(array, new Comparator(){
+                    @Override
+                    public int compare(int a, int b) {
+                        return super.compare(-a, -b);
+                    }
+                    
+                });
                 //Change your code here
 		
 		for (int i = 0; i < array.length; i++) {
